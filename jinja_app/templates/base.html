@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>{% block title %} Mid morning {% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        {% block header %} Welcome to Safari mid morning class {% endblock %}
+      </h1>
+      <nav>
+        <li><a href="{% url 'home_page' %}">Home</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+      </nav>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      <p>&copy; 2024 safarilab</p>
+    </footer>
+  </body>
+</html>
